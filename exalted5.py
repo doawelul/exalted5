@@ -1,3 +1,5 @@
+import sys
+
 unittraits = {"garen": {"storyweaver", "warden"},
               "ahri": {"fated", "arcanist"},
               "caitlyn": {"ghostly", "sniper"},
@@ -31,7 +33,7 @@ unittraits = {"garen": {"storyweaver", "warden"},
               "diana": {"dragonlord", "sage"},
               "illaoi": {"ghostly", "arcanist", "warden"},
               "soraka": {"heavenly", "altruist"},
-              "tahm kench": {"mythic", "bruiser"},
+              "tahmkench": {"mythic", "bruiser"},
               "thresh": {"fated", "behemoth"},
               "tristana": {"fortune", "duelist"},
               "volibear": {"inkshadow", "duelist"},
@@ -42,7 +44,7 @@ unittraits = {"garen": {"storyweaver", "warden"},
               "galio": {"storyweaver", "bruiser"},
               "kaisa": {"inkshadow", "trickshot"},
               "kayn": {"ghostly", "reaper"},
-              "lee sin": {"dragonlord", "duelist"},
+              "leesin": {"dragonlord", "duelist"},
               "lillia": {"mythic", "invoker"},
               "morgana": {"ghostly", "sage"},
               "nautilus": {"mythic", "warden"},
@@ -97,7 +99,8 @@ full0 = traitbps.copy()
 for trait in full0:
     full0[trait] = 0
 
-exaltedunits = {"reksai", "qiyana", "teemo", "alune", "aphelios", "nautilus"}
+sys.argv = sys.argv[1:]
+exaltedunits = set([name.lower() for name in sys.argv])
 
 full8comp = []
 full8compcosts = []
